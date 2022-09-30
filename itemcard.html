@@ -20,7 +20,7 @@
 
   <br>
 
-  <div class="card" style="cursor:auto">
+  <div id="itemCard" class="card" style="cursor:auto">
   
     <div class="slideshow-container" id="slideshow">
     <a id="prev" class="prev" style="visibility:hidden" onclick="plusSlides(-1)">❮</a>
@@ -1803,6 +1803,9 @@ let input = {
   paint: paint,
 };
 
+document.getElementById("itemNav").addEventListener("click", onNavClick);
+document.getElementById("itemCard").addEventListener("click", onCardClick);
+
 let slideIndex = 1;
 
 let section = getSection();
@@ -2036,8 +2039,10 @@ function touchEnd(event)
   } else if (movedBy > 100) {
     plusSlides(-1);
   }
-  setSliderPosition();
-  draggingSlide = null;
+  if (draggingSlide) {
+    setSliderPosition();
+    draggingSlide = null;
+  }
 }
 
 function touchMove(event)
@@ -2064,6 +2069,16 @@ function animation()
 function setSliderPosition()
 {
   draggingSlide.style.transform = `translateX(${currentTranslate}px)`
+}
+
+function onCardClick(event)
+{
+  event.stopPropagation();
+}
+
+function onNavClick(event)
+{
+  closeNav();
 }
 
 function plusSlides(n) {
