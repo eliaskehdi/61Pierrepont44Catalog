@@ -2014,10 +2014,8 @@ let currentTranslate = 0, prevTranslate = 0;
 function touchStart(event)
 {
   startPos = getPositionX(event);
-  console.log(startPos);
   draggingSlide = event.currentTarget;
   draggingSlide.classList.add('grabbing');
-  console.log(draggingSlide);
 
   animationID = requestAnimationFrame(animation);
 }
@@ -2046,7 +2044,6 @@ function touchMove(event)
 {
   if (draggingSlide != null) {
     const currentPos = getPositionX(event);
-    console.log(prevTranslate, currentPos, startPos);
     currentTranslate = prevTranslate + currentPos - startPos;
   }
 }
@@ -2066,7 +2063,6 @@ function animation()
 
 function setSliderPosition()
 {
-  console.log(currentTranslate);
   draggingSlide.style.transform = `translateX(${currentTranslate}px)`
 }
 
@@ -2090,7 +2086,6 @@ function showSlides(n) {
 
   let dots = document.getElementsByClassName("dot");
   if (dots.length > 0) {
-    console.log(dots);
     for (i = 0; i < dots.length; i++) {
       dots[i].className = dots[i].className.replace(" active", "");
     }
