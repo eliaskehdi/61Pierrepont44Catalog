@@ -1984,14 +1984,90 @@ function addSlideShowImg(num, total, src, caption, objpos, scale) {
   if (scale !== undefined) {
     image.style.width  = scale;
   }
+  image.addEventListener('dragstart', (e) => e.preventDefault());
   imgslide.appendChild(image);
   const txt = document.createElement("div");
   txt.className = "captiontext";
   txt.innerHTML = caption;
   imgslide.appendChild(txt);
 
+  // Touch events
+  imgslide.addEventListener('touchstart', touchStart);
+  imgslide.addEventListener('touchend', touchEnd);
+  imgslide.addEventListener('touchmove', touchMove);
+
+  // Mouse events
+  imgslide.addEventListener('mousedown', touchStart);
+  imgslide.addEventListener('mouseup', touchEnd);
+  imgslide.addEventListener('mouseleave', touchEnd);
+  imgslide.addEventListener('mousemove', touchMove);
+
   let slideshow = document.getElementById("slideshow");
   slideshow.insertBefore(imgslide, slideshow.firstChild);
+}
+
+let draggingSlide = null;
+let startPos = 0;
+let animationID = 0;
+let currentTranslate = 0, prevTranslate = 0;
+
+function touchStart(event)
+{
+  startPos = getPositionX(event);
+  console.log(startPos);
+  draggingSlide = event.currentTarget;
+  draggingSlide.classList.add('grabbing');
+  console.log(draggingSlide);
+
+  animationID = requestAnimationFrame(animation);
+}
+
+function touchEnd(event)
+{
+  if (draggingSlide) {
+    draggingSlide.classList.remove('grabbing');
+  }
+  cancelAnimationFrame(animationID);
+
+  const movedBy = currentTranslate - prevTranslate;
+
+  currentTranslate = 0;
+  prevTranslate = currentTranslate;
+  if (movedBy < -100) {
+    plusSlides(1);
+  } else if (movedBy > 100) {
+    plusSlides(-1);
+  }
+  setSliderPosition();
+  draggingSlide = null;
+}
+
+function touchMove(event)
+{
+  if (draggingSlide != null) {
+    const currentPos = getPositionX(event);
+    console.log(prevTranslate, currentPos, startPos);
+    currentTranslate = prevTranslate + currentPos - startPos;
+  }
+}
+
+function getPositionX(event)
+{
+  return event.type.includes('mouse') ? event.pageX : event.touches[0].clientX;
+}
+
+function animation()
+{
+  if (draggingSlide != null) {
+    setSliderPosition();
+    requestAnimationFrame(animation);
+  }
+}
+
+function setSliderPosition()
+{
+  console.log(currentTranslate);
+  draggingSlide.style.transform = `translateX(${currentTranslate}px)`
 }
 
 function plusSlides(n) {

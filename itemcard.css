@@ -1,6 +1,12 @@
 .mySlides {
   display: none;
   position: relative;
+  cursor: grab;
+  transition: transform 0.3s ease-out;
+}
+
+.grabbing {
+  cursor: grabbing;
 }
 
 img {
