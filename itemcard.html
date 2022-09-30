@@ -1,0 +1,2060 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="itemcard.css">
+<link rel="stylesheet" href="header.css">
+<link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+
+<div class="header">
+  <a href="sections.html"><img src="images/sections/home.png" /><b>61Pierrepont44</b> Home</a>
+</div>
+
+<div id="itemNav" class="overlay">
+
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+  <br>
+
+  <div class="card" style="cursor:auto">
+  
+    <div class="slideshow-container" id="slideshow">
+    <a id="prev" class="prev" style="visibility:hidden" onclick="plusSlides(-1)">❮</a>
+    <a id="next" class="next" style="visibility:hidden" onclick="plusSlides(1)">❯</a>
+    </div>
+    
+    <div style="text-align:center" class="slidedots" id="slidedots">
+    </div>
+
+    <p id="highlight" class="highlight"></p>
+    
+    <p id="desc" class="description"></p>
+    
+    <p id="collaps" class="collapsible" onclick="collapse(this)">Spec Sheet</p>
+    
+    <div class="specsheet">
+      <table id="spectable">
+        <colgroup>
+          <col span="1" style="width: 30%;">
+          <col span="1" style="width: 70%;">
+        </colgroup>
+      </table>
+    </div>
+  </div>
+
+</div> 
+
+<div class="main">
+
+<br>
+
+<div class="row" id="items">
+</div>
+
+</div>
+
+<script>
+
+
+let living = [
+  {
+    title: "Mulholland Occasional Chair",
+    brand: {
+      name: "Industry West"
+    },
+    description: "The stylish Mulholland Occasional Chair is a sophisticated piece that seamlessly blends with any room decor as a comfortable focal point. It has a solid black wood frame, inlaid rattan caning, and upholstered cushion. Assembly is not required. Avoid contact with hot items and immediately soak up spills. To clean, use a cloth moistened with warm water and mild soap.",
+    cost: {
+      total: 1536.4,
+      original: 1575
+    },
+    profileidx: 0,
+    images: [
+      {
+        url: "images/mulholland/industry_west_product_mullholland_loungechair_2.webp"
+      },
+      {
+        url: "images/mulholland/industry_west_product_mullholland_loungechair_1.webp"
+      },
+      {
+        url: "images/mulholland/industry_west_product_mullholland_loungechair_3.webp"
+      },
+      {
+        url: "images/mulholland/industry_west_product_mullholland_loungechair_4.webp"
+      },
+      {
+        url: "images/mulholland/industry_west_product_mullholland_loungechair_5.webp"
+      },
+      {
+        url: "images/mulholland/industry_west_product_mullholland_loungechair_6.webp"
+      },
+      {
+        url: "images/mulholland/industry_west_product_mullholland_loungechair_7.webp"
+      },
+      {
+        url: "images/mulholland/industry_west_product_mullholland_loungechair_8.webp"
+      },
+      {
+        url: "images/mulholland/industry_west_product_mullholland_loungechair_9.webp"
+      },
+    ],
+    specs: [
+      {
+        label: "Brand",
+        value: "Industry West",
+        url: "https://industrywest.com/products/mulholland-occasional-chair"
+      },
+      {
+        label: "Fabric",
+        value: "Upholstered Cushion",
+      },
+      {
+        label: "Wood Finish",
+        value: "Solid Black Wood Frame with Inlaid Rattan Caning",
+      },
+      {
+        label: "Dimensions",
+        value: '33.5" Wide x 32.7" Deep x 28.7" High',
+      },
+      {
+        label: "Seat Height",
+        value: '14.5"',
+      },
+      {
+        label: "SKU",
+        value: "S24-85/F3/VDF102",
+      },
+      {
+        label: "Date of Purchase",
+        value: "July 01, 2022",
+      },
+    ]
+  },
+  {
+    title: "Jeanne Armchair",
+    brand: {
+      name: "Soho Home"
+    },
+    description: "Elevate your seating spot with the Jeanne chair, built from an engineered hardwood frame with iron and blackened-brass accents. A nod to vintage styling and the soft furnishings seen throughout our Houses, the armchair spotlights tapered metal legs and an upholstered back, with a wrap-around cocoon silhouette. It comes with tapered metal legs, brass accents, upholstered back, and wrap-around silhouette.",
+    cost: {
+      total: 709.81,
+      original: 1095
+    },
+    profileidx: 0,
+    images: [
+      {
+        url: "images/jeanneArmchair/144298-74545196-hover.jpg"
+      },
+      {
+        url: "images/jeanneArmchair/144293-74545196-listing.jpg"
+      },
+      {
+        url: "images/jeanneArmchair/144311-74545196-detail-2.jpg"
+      },
+      {
+        url: "images/jeanneArmchair/144331-74545196-detail-3.jpg"
+      },
+      {
+        url: "images/jeanneArmchair/144336-74545196-detail-4.jpg"
+      },
+      {
+        url: "images/jeanneArmchair/148954-jeanne.jpg"
+      },
+    ],
+    specs: [
+      {
+        label: "Brand",
+        value: "Soho Home",
+        url: "https://www.sohohome.com/us/products/jeanne-armchair"
+      },
+      {
+        label: "Fabric",
+        value: "100% Polyester"
+      },
+      {
+        label: "Color",
+        value: "Brass Accents",
+      },
+      {
+        label: "Frame",
+        value: "Engineered Hardwood",
+      },
+      {
+        label: "Dimensions",
+        value: 'H77.5 x W66.7 x D75.6cm / H30.5 x W26.3 x D29.8"',
+      },
+      {
+        label: "Arm Height",
+        value: '25"',
+      },
+      {
+        label: "Seat Dims",
+        value: '20.1" Wide x 20" Deep x 18" High',
+      },
+      {
+        label: "Care Instructions",
+        value: "Professional Upholstery Cleaning",
+      },
+      {
+        label: "Date of Purchase",
+        value: "July 02, 2022",
+      },
+    ]
+  },
+  {
+    title: "The Crosby",
+    brand: {
+      name: "Maiden Home"
+    },
+    description: "A classic shape with a clean, tailored look. The Crosby's seat and arms are cozy yet upright enough to provide incredible support. The lean profile makes this sofa ideal for spaces large and small. Performance Chenille fabric is a soft, two-tone weave with a subtle luster. Finished with Crypton Home for resistance to stains and spills, marrying premium upholstery with remarkable durability.",
+    cost: {
+      total: 4295,
+      original: 3850
+    },
+    profileidx: 0,
+    images: [
+      {
+        url: "images/thecrosby/crosby-chaise-sectional_performance-chenille-nickel_pecan_2048x.webp"
+      },
+      {
+        url: "images/thecrosby/master-crosby-chaise-sectional-4_2048x.webp"
+      },
+    ],
+    specs: [
+      {
+        label: "Brand",
+        value: "Maiden Home",
+        url: "https://maidenhome.com/collections/the-crosby?color=Nickel&size=Chaise%20Right:%2091%22%20Wide&finish=Pecan&currentFabric=Performance%20Chenille&currentType=chaise-sectional",
+      },
+      {
+        label: "Fabric",
+        value: "Performance Chenille",
+      },
+      {
+        label: "Color",
+        value: "Nickel",
+      },
+      {
+        label: "Wood Finish",
+        value: "Pecan",
+      },
+      {
+        label: "Configurations",
+        value: 'Chaise Sectional, Chaise Right 91" Wide',
+      },
+      {
+        label: "Overall Dims",
+        value: '91" Wide, 37” Deep, 34” Tall',
+      },
+      {
+        label: "Seating Dims",
+        value: '91" Wide, 23” Deep, 20” High',
+      },
+      {
+        label: "Arm Dims",
+        value: "Professional Upholstery Cleaning",
+      },
+      {
+        label: "Date of Purchase",
+        value: "June 30, 2022",
+      },
+    ]
+  },
+  {
+    title: "Rene Chandelier",
+    brand: {
+      name: "Soho Home"
+    },
+    description: "The Rene chandelier has six glass orbs sitting in antique brass holders, suspended in a hanging formation, and is inspired by the lights found in our Soho Works spaces. Curved black tubes appear to float beneath the globes, enhancing the sculptural quality of the design.",
+    cost: {
+      total: 700.81,
+      original: 795
+    },
+    profileidx: 0,
+    images: [
+      {
+        url: "images/ReneChandelier/143748-74532387-hover.jpg",
+        objpos: "50% 70%"
+      },
+      {
+        url: "images/ReneChandelier/143744-74532387-listing.jpg",
+        objpos: "50% 70%"
+      },
+      {
+        url: "images/ReneChandelier/143753-74532387-detail1.jpg"
+      },
+      {
+        url: "images/ReneChandelier/143758-74532387-detail2.jpg"
+      },
+      {
+        url: "images/ReneChandelier/143763-74532387-detail3.jpg"
+      },
+      {
+        url: "images/ReneChandelier/152683-anders-210223-066-sh-r2-v2.jpg",
+        objpos: "10% 10%"
+      },
+    ],
+    specs: [
+      {
+        label: "Brand",
+        value: "Soho Home",
+        url: "https://www.sohohome.com/us/products/rene-chandelier"
+      },
+      {
+        label: "Frame",
+        value: "Antique Brass-Finished"
+      },
+      {
+        label: "Materials",
+        value: "Brass, Glass, and Metal",
+      },
+      {
+        label: "Lightbulb",
+        value: "6 / E12 / CANDLE / LED / 6W MAXIMUM"
+      },
+      {
+        label: "Height",
+        value: 'Adjustable between 25.5" and 33.4"'
+      },
+      {
+        label: "Ceiling Rose Dia",
+        value: '5"'
+      },
+      {
+        label: "Voltage",
+        value: "110-120V"
+      },
+      {
+        label: "Compliance",
+        value: "UL"
+      },
+      {
+        label: "IP Rating",
+        value: "IP20"
+      },
+      {
+        label: "Electrical Class",
+        value: "Class 11"
+      },
+      {
+        label: "Dimmable",
+        value: "Yes, with compatible bulbs for your dimmer"
+      },
+      {
+        label: "Care Instructions",
+        value: "Clean with soft dry cloth only"
+      },
+      {
+        label: "Date of Purchase",
+        value: "July 02, 2022",
+      }
+    ]
+  },
+  {
+    title: "Georgia Bookshelf",
+    brand: {
+      name: "Spaced Out Studio"
+    },
+    description: "Made in the midwest and inspired by mid-century designs, the bookshelf is finely crafted by Amish woodworkers.This 6ft handmade mid-century modern inspired bookshelf is made of solid walnut wood with an oil-based matte varnish.",
+    cost: {
+      total: 1740.91,
+      original: 1599
+    },
+    profileidx: 0,
+    images: [
+      {
+        url: "images/GeorgiaBookshelf/acf86ba2f1a21ef456130b781c3e1268.jpg"
+      },
+      {
+        url: "images/GeorgiaBookshelf/il_1588xN.4056976242_epw6.webp"
+      },
+    ],
+    specs: [
+      {
+        label: "Brand",
+        value: "Spaced Out Studio",
+        url: "https://www.etsy.com/listing/895172050/6ft-handmade-mid-century-modern-inspired?variation0=1660366053"
+      },
+      {
+        label: "Retail Store",
+        value: "Etsy"
+      },
+      {
+        label: "Finish",
+        value: "Oil-Based Matte Varnish with Standard Stains"
+      },
+      {
+        label: "Color",
+        value: "Walnut"
+      },
+      {
+        label: "Dimensions",
+        value: '6 Ft, 72” Wide x 13” Deep x 30” High'
+      },
+      {
+        label: "Interior shelf Dims",
+        value: '23” Wide x 10 7/8” High'
+      },
+      {
+        label: "Date of Purchase",
+        value: "July 02, 2022",
+      }
+    ]
+  },
+  {
+    title: "Noir Tiered Coffee Table",
+    brand: {
+      name: "Anthropologie"
+    },
+    description: "This oak coffee table comes with metal legs. Due to the crafted nature of this item, expect slight variation in the appearance of each unique piece. Dusting is best done with a soft, lint-free cloth. Wipe gently with a warm, damp cloth. If necessary, use mild soap to address soiled areas. Dry immediately after cleaning. If a liquid spill occurs, prompt cleaning is advised. Do not place hot items directly on the surface.",
+    cost: {
+      total: 441.79,
+      original: 498
+    },
+    profileidx: 0,
+    images: [
+      {
+        url: "images/NoirTiered/48198139_001_b2.webp",
+        objpos: "50% 70%"
+      },
+      {
+        url: "images/NoirTiered/48198139_001_b3.webp"
+      },
+      {
+        url: "images/NoirTiered/48198139_001_b4.webp",
+        objpos: "50% 60%"
+      },
+      {
+        url: "images/NoirTiered/48198139_001_b5.webp"
+      },
+      {
+        url: "images/NoirTiered/48198139_001_b6.webp",
+        objpos: "50% 70%"
+      },
+    ],
+    specs: [
+      {
+        label: "Brand",
+        value: "Anthropology",
+        url: "https://www.anthropologie.com/shop/noir-tiered-coffee-table?color=001&type=STANDARD&size=35%22&quantity=1"
+      },
+      {
+        label: "Wood",
+        value: "Oak"
+      },
+      {
+        label: "Legs Material",
+        value: "Metal"
+      },
+      {
+        label: "Color",
+        value: "Black"
+      },
+      {
+        label: "Dimensions",
+        value: '15" Height x 35.5" Diameter'
+      },
+      {
+        label: "Care Instructions",
+        value: "Wipe Gently with a Warm, Damp Cloth. If Necessary, Use Mild Soap"
+      },
+      {
+        label: "Date of Purchase",
+        value: "July 04, 2022",
+      }
+    ]
+  },
+  {
+    title: "Avenir Side Table",
+    brand: {
+      name: "Lemieux et Cie"
+    },
+    description: "The simple cylindrical form of this side table highlights the natural Mappa burl wood to create a sculptural, functional accent for any room. Sought after for its decorative, twisted appearance, burl wood arises from overgrown knots and outgrowths found within a tree's roots or trunk, resulting in captivating variations alternative to grain. Crafted from bleached burl veneer, this pedestal side table features a center cut-out for an unexpected touch amongst its earth wood patterns.",
+    cost: {
+      total: 1023.01,
+      original: 903
+    },
+    profileidx: 0,
+    images: [
+      {
+        url: "images/Avenir/AvenirSideTablebetter_750x.jpg",
+      },
+      {
+        url: "images/Avenir/CL-150-_1_750x.webp",
+      },
+      {
+        url: "images/Avenir/CL-150-Top_2_750x.webp",
+      },
+      {
+        url: "images/Avenir/LEC_58_Bedroom_finalcopy_750x.webp",
+      },
+      {
+        url: "images/Avenir/avenirside_750x.webp",
+      },
+    ],
+    specs: [
+      {
+        label: "Brand",
+        value: "Lemieux et Cie",
+        url: "https://lemieuxetcie.com/products/avenir-side-table"
+      },
+      {
+        label: "Retail Store",
+        value: "Anthropology",
+        url: "https://www.anthropologie.com/shop/lemieux-et-cie-avenir-side-table"
+      },
+      {
+        label: "Dimensions",
+        value: '21" Height x 18” Width x 18" Depth'
+      },
+      {
+        label: "Weight",
+        value: "37 lbs"
+      },
+      {
+        label: "Color and Finish",
+        value: "Mapa Burl Veneers"
+      },
+      {
+        label: "Wood",
+        value: "Solid Acacia with Bleached Burl Wood Veneer"
+      },
+      {
+        label: "Protection",
+        value: "Sealed with Clear Lacquer"
+      },
+      {
+        label: "Care Instructions",
+        value: "Wipe Clean with Soft Cloth"
+      },
+      {
+        label: "Date of Purchase",
+        value: "July 04, 2022",
+      }
+    ]
+  },
+  {
+    title: "Anya Indigo Hand-Knotted Rug",
+    brand: {
+      name: "Mcgee & Co"
+    },
+    description: "Hand-Knotted by skilled artisans, our Anya Indigo Rug brings both texture and contrast to the forefront of your living room. Crafted from 100% wool, this rug easily anchors your furniture with its transitional look, working well in both modern and traditional homes. Due to the handmade quality of our rugs, they may vary slightly in size and/or color. Rug pattern is scaled to rug size and may vary from the images shown. An all natural fiber made from the protective coats of sheep. Wool is very resilient and durable – its texture allows it to recover quickly from indenting caused by footsteps or furniture. Wool rugs will withstand the elements of life for years without showing signs of wear. If spills occur, blot immediately. Use a common wool cleaning detergent to remove stains. Do not use oxygen cleaners on your wool rug. For substantial spills and stains, we recommend professional cleaning only. Avoid direct sunlight to prevent fading. Wool will look great for a long time just by vacuuming regularly. Be sure to turn the beater bar on the off setting before vacuuming.",
+    cost: {
+      total: 1306.5,
+      original: 2150
+    },
+    profileidx: 0,
+    images: [
+      {
+        url: "images/Anya/AnyaIndigoHand-KnottedRug-MRUG0590-BLU-8x10_x700.webp",
+        scale: "65%"
+      },
+      {
+        url: "images/Anya/AnyaBlueHandKnottedRug02_e616ae7f-a150-4394-9a36-fed6986db6a9_x700.webp",
+        objpos: "50% 80%"
+      },
+      {
+        url: "images/Anya/AnyaBlueHandKnottedRug01_d09acc49-7f7e-409d-850a-07605625275b_x700.webp",
+        objpos: "50% 80%"
+      },
+      {
+        url: "images/Anya/holiday2020_119_x700.webp"
+      },
+      {
+        url: "images/Anya/holiday2020_122_09b42e95-5a8d-43a4-ab94-7d98b33bb9f5_x700.webp",
+        objpos: "50% 80%"
+      },
+    ],
+    specs: [
+      {
+        label: "Brand",
+        value: "Mcgee & Co",
+        url: "https://www.mcgeeandco.com/products/anya-indigo-hand-knotted-rug"
+      },
+      {
+        label: "Retail Store",
+        value: "Etsy",
+      },
+      {
+        label: "Dimensions",
+        value: "8' x 10'"
+      },
+      {
+        label: "Fabric",
+        value: "100% Wool"
+      },
+      {
+        label: "SKU",
+        value: "MRUG0590-BLU-8x10"
+      },
+      {
+        label: "Care Instructions",
+        value: "Use a Common Wool Cleaning Detergent to Remove Stains"
+      },
+      {
+        label: "Date of Purchase",
+        value: "July 04, 2022",
+      }
+    ]
+  },
+  {
+    title: "Nora Tambour Sideboard",
+    brand: {
+      name: "Soho Home"
+    },
+    description: "Slot the Nora sideboard into an empty corner of your home for instant warmth and harmony. Taking cues from the interiors at White City House, the sideboard is crafted from tambour solid oak contrasted by a honed black marquina marble top. This solid oak tambour unit comes with a solid honed black marquina marble top sourced from Spain and brass detailing. For day-to-day cleaning, dust with a clean, dry cloth. Marble must be cleaned with extreme delicacy as it is porous and can stain more easily than other materials. Surfaces are treated with anti-stain and anti-oil products, however, spills of acidic liquids such as wine, coffee, lemon or vinegar must be wiped immediately. Do not under any circumstances clean with abrasive or aggressive products, acidic detergents, bleach or abrasive paper or steel wool.",
+    cost: {
+      total: 3009.39,
+      original: 3695
+    },
+    profileidx: 0,
+    images: [
+      {
+        url: "images/Nora/128633-74545578-hover.jpg",
+        objpos: "50% 100%"
+      },
+      {
+        url: "images/Nora/146456-anders-201216-447-sh-f1.jpg",
+        objpos: "50% 70%"
+      },
+      {
+        url: "images/Nora/128617-74545578-listing.jpg",
+        objpos: "50% 100%"
+      },
+      {
+        url: "images/Nora/146472-74545578-detail1.jpg",
+        objpos: "50% 90%"
+      },
+      {
+        url: "images/Nora/146477-74545578-detail2.jpg",
+        objpos: "50% 50%"
+      },
+      {
+        url: "images/Nora/146483-74545578-detail3.jpg",
+        objpos: "50% 90%"
+      },
+      {
+        url: "images/Nora/146488-74545578-detail4.jpg",
+        objpos: "50% 50%"
+      },
+      {
+        url: "images/Nora/146494-74545578-detail5.jpg",
+        objpos: "50% 80%"
+      },
+    ],
+    specs: [
+      {
+        label: "Brand",
+        value: "Soho Home",
+        url: "https://www.sohohome.com/us/products/nora-tambour-sideboard-oak-and-dark-marble"
+      },
+      {
+        label: "Dimensions",
+        value: 'H75 x W164.6 x D50 cm / H29.5 x W64.8 x D19.7"'
+      },
+      {
+        label: "Weight",
+        value: "107 kg / 235.9 lbs"
+      },
+      {
+        label: "Wood",
+        value: "Solid Oak"
+      },
+      {
+        label: "Top Material",
+        value: "Solid Honed Black Marquina Marble"
+      },
+      {
+        label: "Inlay Material",
+        value: "Brass Inlay & Ring"
+      },
+      {
+        label: "Materia",
+        value: "Oak Veneer and Steel"
+      },
+      {
+        label: "Care Instructions",
+        value: "Dust with a Clean Dry Cloth"
+      },
+      {
+        label: "Date of Purchase",
+        value: "July 08, 2022",
+      }
+    ]
+  },
+  {
+    title: "Coastal Living Parasol",
+    brand: {
+      name: "Regina Andrew"
+    },
+    description: "With a nod to its namesake at the base, Parasol’s gold leaf accents play well with the black neck and modern structured linen shade. Outfit your living room or bedroom with this contemporary, well-made lamp.",
+    cost: {
+      total: 547.5,
+      original: 562.5
+    },
+    profileidx: 0,
+    images: [
+      {
+        url: "images/parasol/14-1033_1_a1e666a4-a8ab-4977-a1ce-ca6490cc6fb6_1800x1800.webp",
+        scale: "70%"
+      },
+      {
+        url: "images/parasol/14-1033_2_a892e1af-bb76-401f-b7af-26700a8c2906_1080x.webp",
+      },
+      {
+        url: "images/parasol/14-1033_3_614c0b85-0f75-482f-aea7-93c17abdbdd7_1800x1800.webp",
+        objpos: "100% 10%"
+      },
+      {
+        url: "images/parasol/14-1033_4_ddb70967-56c3-4283-8242-760fd909d2a3_1800x1800.webp",
+        scale: "80%"
+      },
+      {
+        url: "images/parasol/14-1033_5_d241e5da-f597-48bb-b8e3-9daf82a16273_1080x.webp",
+        scale: "70%"
+      },
+      {
+        url: "images/parasol/14-1033_16_449b3dd0-6d02-4cac-b854-6255fd09cb30_1080x.webp",
+        scale: "70%"
+      },
+      {
+        url: "images/parasol/14-1033_91_63e9e577-3ba4-469a-80ed-a8106210f8fa_1080x.webp",
+        scale: "70%"
+      },
+    ],
+    specs: [
+      {
+        label: "Brand",
+        value: "Regina Andrew",
+        url: "https://www.burkedecor.com/products/parasol-floor-lamp-by-regina-andrew-14-1033"
+      },
+      {
+        label: "Retail Store",
+        value: "Burke Decor",
+      },
+      {
+        label: "Dimensions",
+        value: '60" H x 18" W x 18" D'
+      },
+      {
+        label: "Shade Dims",
+        value: '15" H x 18" W x 13" D'
+      },
+      {
+        label: "Shade Fabric",
+        value: "Linen"
+      },
+      {
+        label: "Wattage",
+        value: "150 Watt Max"
+      },
+      {
+        label: "Bulb Type",
+        value: "A Type Medium Base (E26)"
+      },
+      {
+        label: "Socket",
+        value: "E26 3-Way Cast Turn Knob"
+      },
+      {
+        label: "Cord",
+        value: "8 Feet"
+      },
+      {
+        label: "Material",
+        value: "Aluminium"
+      },
+      {
+        label: "Finish",
+        value: "Gold Leaf"
+      },
+      {
+        label: "Stem Color",
+        value: "Polished Brass"
+      },
+      {
+        label: "Weight",
+        value: "16 lbs"
+      },
+      {
+        label: "Date of Purchase",
+        value: "Sept 20, 2022",
+      }
+    ]
+  },
+];
+
+let dining = [
+  {
+    title: "Track Dining Table",
+    brand: {
+      name: "Sundays"
+    },
+    description: "Soft, rounded edges pair beautifully with a squared soft edged frame and angular legs, creating a balanced and versatile mainstay for your dining room. The perfectly oval top is reminiscent of a well-groomed race track, but infinitely more refined. The Track table is inspired from a race-track table design by the father of Noah, our co-founder and product developer. Natural solid American Walnut pairs well with just about everything and provides a generous weight and stability. Rounded edges add not only an element of style, but safety in consideration of our smallest friends.",
+    cost: {
+      total: 2280,
+      original: 2380
+    },
+    profileidx: 0,
+    images: [
+      {
+        url: "images/trackdining/track-dining-table-walnut-1_1536x.webp"
+      },
+      {
+        url: "images/trackdining/DIN-BC-006-003_01_960x.webp"
+      },
+      {
+        url: "images/trackdining/DIN-BC-006-003_02_1536x.webp"
+      },
+      {
+        url: "images/trackdining/DIN-BC-006-003_03_1792x.webp"
+      },
+      {
+        url: "images/trackdining/DIN-BC-006-003_2000x_19bd13c8-d079-496d-a56a-66262f95cfe2_1536x.webp"
+      },
+      {
+        url: "images/trackdining/trackdetailwalnut2_1536x.webp"
+      },
+    ],
+    specs: [
+      {
+        label: "Brand",
+        value: "Sundays",
+        url: "https://www.sundays-company.com/products/track-dining-table-american-walnut",
+      },
+      {
+        label: "Material",
+        value: "Natural solid American walnut",
+      },
+      {
+        label: "Wood",
+        value: "FSC, NHLA, PEFC, and Rainforest Alliance Certified",
+      },
+      {
+        label: "Finish",
+        value: "Matte with 5% Sheen Protection and Anti-Scratch Protection",
+      },
+      {
+        label: "Configurations",
+        value: 'Chaise Sectional, Chaise Right 91" Wide',
+      },
+      {
+        label: "Dimensions",
+        value: '86"W x 39"D x 29"H',
+      },
+      {
+        label: "Dims Between Legs",
+        value: 'Lengthwise 52" Widthwise 20.5"',
+      },
+      {
+        label: "Overhang Dims",
+        value: 'Lengthwise 12" Widthwise 17"',
+      },
+      {
+        label: "Legs Inset by",
+        value: '3.5"',
+      },
+      {
+        label: "Seats",
+        value: "6-8",
+      },
+      {
+        label: "Date of Purchase",
+        value: "July 02, 2022",
+      },
+    ]
+  },
+  {
+    title: "Allure Chandelier",
+    brand: {
+      name: "ZGallerie"
+    },
+    description: "Our blown glass Allure Chandelier is a grand scale statement piece with more than 150 curving rods seemingly suspended around tiered rings of brushed brass. Its bold composition is completed by 15 candelabra bulbs adding dramatic lighting from within.",
+    cost: {
+      total: 1169.25,
+      original: 1299
+    },
+    profileidx: 0,
+    images: [
+      {
+        url: "images/Allure/webimage-A4FDDBC6-73D7-4FA3-88E26A41EA6ABEF3.png"
+      },
+      {
+        url: "images/Allure/webimage-FA5C9AC7-FE5D-498E-A53E85BAA52A7F4A.png"
+      },
+      {
+        url: "images/Allure/webimage-BE789D70-7441-4F2B-9BDE7FA2893E0188.png"
+      },
+      {
+        url: "images/Allure/webimage-E25F62E3-D7E1-4B69-A2C9349E4964CA23.png"
+      },
+      {
+        url: "images/Allure/webimage-096EB0AC-E720-4F05-80757B8576CE5350.png"
+      },
+      {
+        url: "images/Allure/webimage-DB9EF6CD-373B-4B7F-B9B99908567B27EB.png"
+      },
+      {
+        url: "images/Allure/webimage-D51A78F8-F87A-49AB-A4951D1B596484A6.png"
+      },
+    ],
+    specs: [
+      {
+        label: "Brand",
+        value: "ZGallerie",
+        url: "https://www.zgallerie.com/p-allure-chandelier-999209588?sku=999209588"
+      },
+      {
+        label: "Frame",
+        value: "Iron with Brushed Brass Finish and Curved Blown Glass Clear Rods"
+      },
+      {
+        label: "Chain",
+        value: "3.25' Standard Link"
+      },
+      {
+        label: "Ceiling Plate",
+        value: '4.5" Diameter Brushed Brass Finish'
+      },
+      {
+        label: "Dimensions",
+        value: '31.5" W x 27.75" H'
+      },
+      {
+        label: "Hanging Weight",
+        value: "56.75 lbs"
+      },
+      {
+        label: "Compliance",
+        value: "UL"
+      },
+      {
+        label: "Lightbulb",
+        value: "E12 Socket x 15, Type B Candelabra Bulb, 40W Max",
+      },
+      {
+        label: "SKU",
+        value: "999209588"
+      },
+      {
+        label: "Care Instructions",
+        value: "Wipe Clean Using Soft Cloth"
+      },
+      {
+        label: "Date of Purchase",
+        value: "July 02, 2022",
+      },
+    ]
+  },
+  {
+    title: "Classic Café Upholstered Dining Chair",
+    brand: {
+      name: "West Elm"
+    },
+    description: "On top of its tapered legs and mid-century-inspired frame, we gave our Classic Café Dining Chair a comfortable oval back and an upholstered seat, for a chair that’s extra inviting. The richly grained finish is easy to integrate into modern and traditional decors. We designed this chair to endure in style and quality and to come at a fair price, too.",
+    cost: {
+      total: 350.96,
+      original: 339
+    },
+    profileidx: 0,
+    images: [
+      {
+        url: "images/Cafe/img68o.jpg"
+      },
+      {
+        url: "images/Cafe/classic-cafe-upholstered-kids-chair-o.jpg",
+        objpos: "50% 40%"
+      },
+      {
+        url: "images/Cafe/classic-cafe-upholstered-kids-chair-o 2.jpg",
+        objpos: "50% 40%"
+      },
+    ],
+    specs: [
+      {
+        label: "Brand",
+        value: "West Elm",
+        url: "https://www.westelm.com/products/classic-cafe-dining-chair-h2100/?cm_src=WSIShopRVI&recstrat=RVI%7CRVI"
+      },
+      {
+        label: "Frame",
+        value: "Solid Rubberwood"
+      },
+      {
+        label: "Material",
+        value: "Upholstered"
+      },
+      {
+        label: "Finish",
+        value: "Walnut"
+      },
+      {
+        label: "Set",
+        value: 2
+      },
+      {
+        label: "Dimensions",
+        value: '17.3" W x 20" D x 32" H'
+      },
+      {
+        label: "Seat Depth",
+        value: '15.7"'
+      },
+      {
+        label: "Seat Height",
+        value: '17.75"'
+      },
+      {
+        label: "Weight Capacity",
+        value: "275 lbs"
+      },
+      {
+        label: "Care Instructions",
+        value: "Wipe Clean with a Damp Cloth"
+      },
+      {
+        label: "Date of Purchase",
+        value: "July 03, 2022",
+      },
+    ]
+  }
+];
+
+let kitchen = [
+  {
+    title: "Killingsworth 1 Light Single Globe Pendant",
+    brand: {
+      name: "Wade Logan"
+    },
+    description: "Brass adjustable height light bulb with frosted glass. The light is dimmable and led compatible. It comes with a Globe Electric's vintage designer 60 Watt G30 Incandescent Dimmable Light Bulb (2700K) E26/Medium (Standard) Base is a perfect way to add style and pizzazz to your home.",
+    cost: {
+      total: 149.99,
+      original: 177.04
+    },
+    profileidx: 0,
+    images: [
+      {
+        url: "images/Killingsworth/Killingsworth+1+-+Light+Single+Globe+Pendant.webp",
+        objpos: "50% 80%"
+      },
+      {
+        url: "images/Killingsworth/Killingsworth+1+-+Light+Single+Globe+Pendant (1).webp"
+      },
+      {
+        url: "images/Killingsworth/Killingsworth+1+-+Light+Single+Globe+Pendant (2).webp"
+      },
+      {
+        url: "images/Killingsworth/Killingsworth+1+-+Light+Single+Globe+Pendant (3).webp"
+      },
+      {
+        url: "images/Killingsworth/Killingsworth+1+-+Light+Single+Globe+Pendant (4).webp",
+        objpos: "50% 100%"
+      },
+      {
+        url: "images/Killingsworth/Killingsworth+1+-+Light+Single+Globe+Pendant (5).webp",
+        objpos: "50% 100%"
+      },
+      {
+        url: "images/Killingsworth/Killingsworth+1+-+Light+Single+Globe+Pendant (6).webp",
+        objpos: "50% 100%"
+      },
+    ],
+    specs: [
+      {
+        label: "Brand",
+        value: "Wade Logan",
+        url: "https://www.wayfair.com/lighting/pdp/wade-logan-killingsworth-1-light-single-globe-pendant-w003285459.html"
+      },
+      {
+        label: "Retail Store",
+        value: "Wayfair"
+      },
+      {
+        label: "Lightbulb",
+        value: "E26 Medium Base, 60 Watt, G30, Dimmable"
+      },
+      {
+        label: "Max Height",
+        value: '64.6"'
+      },
+      {
+        label: "Min Height",
+        value: '10.6"'
+      },
+      {
+        label: "Hanging Height",
+        value: '110"'
+      },
+      {
+        label: "Product Weight",
+        value: "4.12 lb"
+      },
+      {
+        label: "Cord Length",
+        value: '54"'
+      },
+      {
+        label: "Date of Purchase",
+        value: "July 02, 2022",
+      },
+    ]
+  }
+];
+
+let hallway = [
+  {
+    title: "Marena Sideboard",
+    brand: {
+      name: "Soho Home"
+    },
+    description: "The Marena sideboard takes its cues from our House in Barcelona. Crafted from warm oak, it is characterized by textured square studs that catch the light at different angles. Fill it with spare glassware, table linen, and cutlery.",
+    cost: {
+      total: 2439.32,
+      original: 2995
+    },
+    profileidx: 0,
+    images: [
+      {
+        url: "images/Marena/185870-74536101-listing.jpg",
+        objpos: "50% 80%"
+      },
+      {
+        url: "images/Marena/188892-anders-210421-125-sh-f1.jpg",
+        objpos: "50% 70%"
+      },
+      {
+        url: "images/Marena/185879-74536101-hover.jpg",
+        objpos: "50% 80%"
+      },
+      {
+        url: "images/Marena/185889-74536101-detail1.jpg",
+        objpos: "50% 80%"
+      },
+      {
+        url: "images/Marena/185897-74536101-detail2.jpg",
+        objpos: "50% 80%"
+      },
+      {
+        url: "images/Marena/185907-74536101-detail3.jpg",
+      },
+      {
+        url: "images/Marena/185915-74536101-detail4.jpg",
+      },
+      {
+        url: "images/Marena/185923-74536101-detail5.jpg",
+        objpos: "50% 80%"
+      },
+    ],
+    specs: [
+      {
+        label: "Brand",
+        value: "Soho Home",
+        url: "https://www.sohohome.com/us/products/marena-sideboard"
+      },
+      {
+        label: "Dimensions",
+        value: 'H32" x W41" x D20"'
+      },
+      {
+        label: "Weight",
+        value: "178.6 lbs"
+      },
+      {
+        label: "Frame",
+        value: "Solid Oak"
+      },
+      {
+        label: "Feet",
+        value: "Plastic Glide"
+      },
+      {
+        label: "Texture",
+        value: "Textured-Stud Front"
+      },
+      {
+        label: "Handles Material",
+        value: "Brass"
+      },
+      {
+        label: "Care Instructions",
+        value: "Dust Frequently and Wipe with a Damp Cloth"
+      },
+      {
+        label: "Date of Purchase",
+        value: "July 05, 2022",
+      },
+    ]
+  },
+  {
+    title: "Paige 3 Light Semi Flush",
+    brand: {
+      name: "Mitzi"
+    },
+    description: "Take a page out of Paige’s book and add some floral accents to your lighting. Opal glossy glass globes hang from flower-shaped metal caps. Options range from a single-globe sconce or pendant to a 9-globe chandelier. Place them in different rooms around the house to add a bouquet of style. All fixtures available in 3 finishes: Aged Brass, Old Bronze and Polished Nickel.",
+    cost: {
+      total: 300.20,
+      original: 394
+    },
+    profileidx: 0,
+    images: [
+      {
+        url: "images/Paige/F47EEC56-1235-417F-BF3B-8373CD36FB62.png"
+      },
+      {
+        url: "images/Paige/07515CE6-10A7-4B7A-8B2A-718DDB188D4F.jpg"
+      },
+      {
+        url: "images/Paige/16C5A896-5A9B-44F0-B235-41DAE872CF31.jpg"
+      },
+      {
+        url: "images/Paige/A9390952-F83B-43D9-8CBE-C0CECE39C850.jpg",
+        objpos: "50% 30%"
+      },
+    ],
+    specs: [
+      {
+        label: "Brand",
+        value: "Mitzi",
+        url: "https://mitzi.com/Product/H193603-AGB"
+      },
+      {
+        label: "Retail Store",
+        value: "Burke Decor",
+        url: "https://www.burkedecor.com/products/paige-3-light-semi-flush-by-mitzi"
+      },
+      {
+        label: "Width/Diameter",
+        value: '16.25"'
+      },
+      {
+        label: "Height",
+        value: '7.75"'
+      },
+      {
+        label: "Canopy",
+        value: '4.75"'
+      },
+      {
+        label: "Material",
+        value: "Steel"
+      },
+      {
+        label: "Shade Material",
+        value: "Glass"
+      },
+      {
+        label: "Shade Color",
+        value: "Opal Matte"
+      },
+      {
+        label: "Shade Height",
+        value: '5.25"'
+      },
+      {
+        label: "Hanging Type",
+        value: "Stem"
+      },
+      {
+        label: "Number of Lamps",
+        value: 3
+      },
+      {
+        label: "Wattage",
+        value: "60 W Each"
+      },
+      {
+        label: "UL Rating",
+        value: "Damp"
+      },
+      {
+        label: "Socket Type",
+        value: "E26 Medium Base - A19 Bulb"
+      },
+      {
+        label: "SKU",
+        value: "H193603-AGB"
+      },
+      {
+        label: "Date of Purchase",
+        value: "July 04, 2022",
+      },
+    ]
+  },
+  {
+    title: "Stella 1 Light Flush Mount",
+    brand: {
+      name: "Mitzi"
+    },
+    description: "Mitzi by Hudson Valley's Stella 1-Light Semi-Flush Mount Ceiling Light was designed in 2017. Invite minimalist style to your space with its round, opal glossy shade. A metallic back plate provides a stylish contrast and completes the modern look. Available in Aged Brass, Old Bronze or Polished Nickel finish. With less clutter and more creativity, Mitzi is attainable high design. Inspired by the founder of Hudson Valley Lighting's grandmother, a painter and master antique-finder, Mitzi mixes classic with contemporary, sacrificing no quality along the way. Designed with thoughtful simplicity, Mitzi lighting fixtures embody form and function in perfect harmony.",
+    cost: {
+      total: 169.85,
+      original: 156
+    },
+    profileidx: 0,
+    images: [
+      {
+        url: "images/Stella/EBCD8B43-FB7E-4A14-89D9-8AEE3D50328F.png"
+      },
+      {
+        url: "images/Stella/4E5AD349-B9AE-440A-B995-B5F69C1394B4.jpg"
+      },
+      {
+        url: "images/Stella/71BB9359-51FF-4818-A539-91C7EB5A87BD.jpg"
+      },
+      {
+        url: "images/Stella/9E255A1F-832E-4EBD-9715-CCFAAF21C972.jpg"
+      },
+      {
+        url: "images/Stella/228E33C6-1B48-4B45-A9E6-59A707B54EC5.jpg"
+      },
+    ],
+    specs: [
+      {
+        label: "Brand",
+        value: "Mitzi",
+        url: "https://mitzi.com/Product/H105601-AGB"
+      },
+      {
+        label: "Height",
+        value: '9"'
+      },
+      {
+        label: "Width",
+        value: '7"'
+      },
+      {
+        label: "Canopy",
+        value: '4.75"'
+      },
+      {
+        label: "Weight",
+        value: "3 lbs"
+      },
+      {
+        label: "Material",
+        value: "Steel"
+      },
+      {
+        label: "Hanging Type",
+        value: "Stem"
+      },
+      {
+        label: "Shade Color",
+        value: "Glossy White"
+      },
+      {
+        label: "Finish",
+        value: "Aged Brass"
+      },
+      {
+        label: "Shade Height",
+        value: '6.75"'
+      },
+      {
+        label: "Shade Diameter",
+        value: '7"'
+      },
+      {
+        label: "Socket",
+        value: "E26 Medium Base"
+      },
+      {
+        label: "Wattage",
+        value: "60 W"
+      },
+      {
+        label: "UL Rating",
+        value: "UI Damp"
+      },
+      {
+        label: "SKU",
+        value: "H105601-AGB"
+      },
+      {
+        label: "Care Instructions",
+        value: "Wipe Clean with a Soft and Dry Cloth"
+      },
+      {
+        label: "Date of Purchase",
+        value: "July 04, 2022",
+      },
+    ]
+  },
+];
+
+let kidsbed = [
+  {
+    title: "Magee Tree Floor Lamp",
+    brand: {
+      name: "Mack & Milo"
+    },
+    description: "This lamp can work with room decors from rustic farmhouse to minimalist contemporary. The twin opal glass shades expand as wide globes on either side, creating a contemporary take on the classic tree floor lamp design. Its golden brass finish offers an aesthetic luster and long-lasting service. A helpful nightlight, or romantic mood lighting. Brighten your life today with this unique piece of home decor.",
+    cost: {
+      total: 127.37,
+      original: 122.99
+    },
+    profileidx: 0,
+    images: [
+      {
+        url: "images/Magee/Magee+63_+Tree+Floor+Lamp.webp",
+        objpos: "50% 30%"
+      },
+      {
+        url: "images/Magee/Magee+63_+Tree+Floor+Lamp (1).webp"
+      },
+      {
+        url: "images/Magee/Magee+63_+Tree+Floor+Lamp (2).webp"
+      },
+      {
+        url: "images/Magee/Magee+63_+Tree+Floor+Lamp (3).webp",
+        objpos: "50% 30%"
+      },
+      {
+        url: "images/Magee/Magee+63_+Tree+Floor+Lamp (4).webp"
+      },
+      {
+        url: "images/Magee/Magee+63_+Tree+Floor+Lamp (5).webp",
+        objpos: "50% 20%"
+      },
+      {
+        url: "images/Magee/Magee+63_+Tree+Floor+Lamp (6).webp",
+        objpos: "50% 20%"
+      },
+      {
+        url: "images/Magee/Magee+63_+Tree+Floor+Lamp (7).webp",
+        objpos: "50% 1%"
+      },
+      {
+        url: "images/Magee/Magee+63_+Tree+Floor+Lamp (8).webp",
+        objpos: "50% 10%"
+      },
+    ],
+    specs: [
+      {
+        label: "Brand",
+        value: "Mack & Milo",
+        url: "https://www.wayfair.com/lighting/pdp/mack-milo-magee-63-tree-floor-lamp-w005062136.html"
+      },
+      {
+        label: "Retail Store",
+        value: "Wayfair"
+      },
+      {
+        label: "Dimensions",
+        value: '63.4" H x 16" W x 11" D'
+      },
+      {
+        label: "Base Dim",
+        value: '1.2" H'
+      },
+      {
+        label: "Shade Dim",
+        value: '7.5" H x 7.5" W x 7.5" D'
+      },
+      {
+        label: "Cord Length",
+        value: '72"'
+      },
+      {
+        label: "Weight",
+        value: '11.5 lb'
+      },
+      {
+        label: "Dimmable",
+        value: "No"
+      },
+      {
+        label: "Bulb Base",
+        value: "E12 Candelabra"
+      },
+      {
+        label: "Material",
+        value: "Metal"
+      },
+      {
+        label: "Metal Type",
+        value: "Iron"
+      },
+      {
+        label: "Base Finish",
+        value: "Golden Brass"
+      },
+      {
+        label: "Shade Material",
+        value: "Glass"
+      },
+      {
+        label: "Shade Color",
+        value: "White"
+      },
+      {
+        label: "Glass Type",
+        value: "Frosted"
+      },
+      {
+        label: "Date of Purchase",
+        value: "August 15, 2022",
+      },
+    ]
+  },
+];
+
+let hardware = [
+  {
+    title: '6 5/16" Bar Pull',
+    brand: {
+      name: "GlideRite Hardware"
+    },
+    description: "Update your kitchen cabinets or bathroom vanities with this product. Upgrading your current cabinet hardware is the cheapest and quickest way to renovate the look of your dressers and drawers. They are also built to last, being constructed of zinc alloy.",
+    highlight: "Kitchen Cabinet Bar",
+    cost: {
+      total: 10.37,
+      original: 13.99
+    },
+    profileidx: 0,
+    images: [
+      {
+        url: "images/barpull/5_+Center+to+Center+Bar+Pull.webp",
+        scale: '80%'
+      },
+      {
+        url: "images/barpull/5_+Center+to+Center+Bar+Pull (1).webp",
+      },
+      {
+        url: "images/barpull/5_+Center+to+Center+Bar+Pull (2).webp",
+      },
+      {
+        url: "images/barpull/5_+Center+to+Center+Bar+Pull (3).webp",
+      },
+    ],
+    specs: [
+      {
+        label: "Brand",
+        value: "GlideRite Hardware",
+        url: "https://www.wayfair.com/home-improvement/pdp/gliderite-hardware-6-516-center-to-center-bar-pull-w002015841.html",
+      },
+      {
+        label: "Retail Store",
+        value: "Wayfair"
+      },
+      {
+        label: "Center to Center",
+        value: '6.3125"'
+      },
+      {
+        label: "Dimensions",
+        value: '6.63" L x 0.38" W'
+      },
+      {
+        label: "Projection",
+        value: '1.25"'
+      },
+      {
+        label: "Weight",
+        value: "0.3 lb"
+      },
+      {
+        label: "Pull Type",
+        value: "Bar/Handle Pull"
+      },
+      {
+        label: "Material",
+        value: "Zinc Die Cast"
+      },
+      {
+        label: "Finish",
+        value: "Satin Gold"
+      },
+      {
+        label: "Screw",
+        value: '8-32 x 1"'
+      },
+      {
+        label: "Date of Purchase",
+        value: "August 15, 2022",
+      },
+    ]
+  },
+  {
+    title: '5" Bar Pull',
+    brand: {
+      name: "GlideRite Hardware"
+    },
+    description: "Update your kitchen cabinets or bathroom vanities with this product. Upgrading your current cabinet hardware is the cheapest and quickest way to renovate the look of your dressers and drawers. They are also built to last, being constructed of zinc alloy.",
+    highlight: "Kitchen Cabinet Bar",
+    cost: {
+      total: 8.15,
+      original: 11.03
+    },
+    profileidx: 0,
+    images: [
+      {
+        url: "images/barpull/5_+Center+to+Center+Bar+Pull.webp",
+      },
+      {
+        url: "images/barpull/5_+Center+to+Center+Bar+Pull (1).webp",
+      },
+      {
+        url: "images/barpull/5_+Center+to+Center+Bar+Pull (2).webp",
+      },
+      {
+        url: "images/barpull/5_+Center+to+Center+Bar+Pull (3).webp",
+      },
+    ],
+    specs: [
+      {
+        label: "Brand",
+        value: "GlideRite Hardware",
+        url: "https://www.wayfair.com/home-improvement/pdp/gliderite-hardware-5-center-to-center-bar-pull-w002016095.html",
+      },
+      {
+        label: "Retail Store",
+        value: "Wayfair"
+      },
+      {
+        label: "Center to Center",
+        value: '5"'
+      },
+      {
+        label: "Dimensions",
+        value: '5.375" L x 0.375" W'
+      },
+      {
+        label: "Projection",
+        value: '1.25"'
+      },
+      {
+        label: "Weight",
+        value: "0.25 lb"
+      },
+      {
+        label: "Pull Type",
+        value: "Bar/Handle Pull"
+      },
+      {
+        label: "Material",
+        value: "Zinc Die Cast"
+      },
+      {
+        label: "Finish",
+        value: "Satin Gold"
+      },
+      {
+        label: "Screw",
+        value: '8-32 x 1"'
+      },
+      {
+        label: "Date of Purchase",
+        value: "August 15, 2022",
+      },
+    ]
+  },
+  {
+    title: "Satori Regent Carrara Nevoso Hexagon",
+    brand: {
+      name: "Satori"
+    },
+    description: "This contemporary marble design is an easy way to add interest and style perfect for a back splash, wall or floor design. With a PEI rating of 3, this floor tile is suitable for medium to heavy traffic areas, is scratch resistant, dent resistant and fade resistant.",
+    highlight: "Kitchen Tiles",
+    cost: {
+      total: 1.89,
+      original: 1.89
+    },
+    profileidx: 0,
+    images: [
+      {
+        url: "images/satori/15387886.webp",
+        scale: '70%'
+      },
+      {
+        url: "images/satori/43523187.webp",
+        scale: '70%'
+      },
+      {
+        url: "images/satori/43535283.webp",
+        scale: '70%'
+      },
+      {
+        url: "images/satori/43535284.webp",
+        scale: '70%'
+      },
+      {
+        url: "images/satori/48354955.webp",
+        scale: '90%'
+      },
+    ],
+    specs: [
+      {
+        label: "Brand",
+        value: "Satori",
+        url: "https://www.lowes.com/pd/Satori-Regent-Carrara-Nevoso-Hexagon-9-in-x-9-in-Matte-Porcelain-Floor-and-Wall-Tile/1002658280"
+      },
+      {
+        label: "Retail Store",
+        value: "Lowes"
+      },
+      {
+        label: "Width",
+        value: '9.84"'
+      },
+      {
+        label: "Length",
+        value: '8.46"'
+      },
+      {
+        label: "Square Footage",
+        value: '0.57'
+      },
+      {
+        label: "Thickness",
+        value: '9 mm'
+      },
+      {
+        label: "Shade Variation",
+        value: 'V2'
+      },
+      {
+        label: "Weight",
+        value: '1.9 lbs'
+      },
+      {
+        label: "Material",
+        value: "Porcelain"
+      },
+      {
+        label: "Finish",
+        value: "Matte"
+      },
+      {
+        label: "Surface Type",
+        value: "Smooth"
+      },
+      {
+        label: "Installation Type",
+        value: "Thinset mortar"
+      },
+      {
+        label: "Date of Purchase",
+        value: "July 04, 2022",
+      },
+    ]
+  },
+];
+
+let paint = [
+  {
+    title: 'Swiss Coffee',
+    brand: {
+      name: "Benjamin Moore"
+    },
+    description: "An essential white with just the right amount of warmth.",
+    highlight: "Main Walls",
+    profileidx: 0,
+    images: [
+      {
+        url: "images/paint/OC-45.png",
+        scale: '80%'
+      },
+    ],
+    specs: [
+      {
+        label: "Brand",
+        value: "Benjamin Moore",
+        url: "https://www.benjaminmoore.com/en-us/paint-colors/color/oc-45/swiss-coffee"
+      },
+      {
+        label: "Color",
+        value: "Swiss Coffee"
+      },
+      {
+        label: "Sheen",
+        value: "Matte"
+      },
+      {
+        label: "Collection",
+        value: "Off White OC-45"
+      },
+      {
+        label: "LRV",
+        value: "83.93"
+      },
+      {
+        label: "Areas",
+        value: "Main Walls"
+      },
+      {
+        label: "Date of Purchase",
+        value: "July 04, 2022",
+      },
+    ]
+  },
+];
+
+let input = {
+  living: living,
+  dining: dining,
+  kitchen: kitchen,
+  hallway: hallway,
+  kidsbed: kidsbed,
+  hardware: hardware,
+  paint: paint,
+};
+
+let slideIndex = 1;
+
+let section = getSection();
+let items = input[section];
+if (items == null) {
+  console.log(section + " items not found");
+} else {
+  loadItems(items);
+}
+
+function formatCost(value) {
+  return value.toLocaleString(undefined, { minimumFractionDigits: 2 });
+}
+
+function slideButtonVisible(visible)
+{
+  let prev = document.getElementById("prev");
+  prev.style.visibility = visible ? 'visible' : 'hidden';
+  let next = document.getElementById("next");
+  next.style.visibility = visible ? 'visible' : 'hidden';
+}
+
+function clear() {
+  let slideshow = document.getElementById("slideshow");
+  while (slideshow.firstChild && slideshow.firstChild.className == "mySlides fade") {
+    slideshow.removeChild(slideshow.firstChild);
+  }
+
+  slideButtonVisible(false);
+
+  let dots = document.getElementById("slidedots");
+  removeAllChildNodes(dots);
+
+  let table = document.getElementById("spectable");
+  removeAllChildNodes(table);
+
+  // Collapse Spec Sheet
+  let collapsible = document.getElementById("collaps");
+  collapsible.classList.toggle("active", false);
+  let content = collapsible.nextElementSibling;
+  content.style.display = "none";
+}
+
+function getSection() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const sec = urlParams.get('sec');
+  if (sec !== null) {
+    return sec;
+  }
+  return "living";
+}
+
+function loadItems(items) {
+  let row = document.getElementById("items");
+
+  for (let i = 0; i < items.length; i++) {
+    let item = items[i];
+
+    let col = document.createElement("DIV");
+    col.className = "column";
+    let card = document.createElement("DIV");
+    card.className = "card";
+    card.onclick = function() {
+      openNav(item);
+    };
+    col.appendChild(card);
+
+    let image = document.createElement("IMG");
+    let imgprof = item.images[item.profileidx];
+    image.setAttribute("src", item.images[item.profileidx].url);
+    if (imgprof.objpos !== undefined) {
+      image.style.objectPosition = imgprof.objpos;
+    }
+    if (imgprof.scale !== undefined) {
+      image.style.width  = imgprof.scale;
+    }
+    image.className = "itemimg";
+    card.appendChild(image);
+
+    let title = document.createElement("DIV");
+    title.className = "captiontext captiontitle";
+    title.innerHTML = item.title;
+    card.appendChild(title);
+
+    row.appendChild(col);
+  }
+}
+
+function load(item) {
+  clear();
+
+  let desc = document.getElementById("desc");
+  desc.innerHTML = item.description;
+  let highlight = document.getElementById("highlight");
+  if (item.highlight !== undefined) {
+    highlight.innerHTML = item.highlight;
+  } else if (item.cost !== undefined) {
+    highlight.innerHTML = "$" + formatCost(item.cost.total);
+    highlight.innerHTML += '<span class="tooltiptext">Total cost with tax and shipping</span>';
+  }
+
+  addSlideShowImages(item);
+
+  insertSpecs(item);
+}
+
+function insertSpecs(item) {
+  for (let i = 0; i < item.specs.length; i++) {
+    let spec = item.specs[i];
+    insertSpec(spec.label, spec.value, spec.url);
+  }
+}
+
+function insertSpec(label, value, url) {
+  let table = document.getElementById("spectable");
+
+  let row = table.insertRow(-1);
+  let lbl = document.createElement('TH');
+  lbl.innerHTML = label;
+  row.appendChild(lbl);
+
+  let val = document.createElement('TD');
+  if (url !== undefined) {
+    let link = document.createElement('A');
+    link.href = url;
+    link.innerHTML = value;
+    val.appendChild(link);
+  } else {
+    val.innerHTML = value;
+  }
+  row.appendChild(val);
+}
+
+function addSlideShowImages(item) {
+  let caption = item.title + " · " + item.brand.name;
+  if (item.cost !== undefined) {
+     caption = caption + " . $" + formatCost(item.cost.original);
+  }
+  let numimg = item.images.length;
+  let addSlideControls = false;
+  if (numimg > 1) {
+    addSlideControls = true;
+    slideButtonVisible(true);
+  }
+  for (let i = numimg - 1; i >= 0; i--) {
+    let idx = i + 1;
+    let img = item.images[i];
+    addSlideShowImg(idx, numimg, img.url, caption, img.objpos, img.scale);
+    if (addSlideControls) {
+      addSlideShowDot(idx);
+    }
+  }
+}
+
+function addSlideShowDot(index) {
+  let dot = document.createElement("SPAN");
+  dot.className = "dot";
+  dot.onclick = function() {
+    currentSlide(index);
+  }
+  let dots = document.getElementById("slidedots");
+  dots.insertBefore(dot, dots.firstChild);
+}
+
+function addSlideShowImg(num, total, src, caption, objpos, scale) {
+
+  const imgslide = document.createElement("div");
+  imgslide.className = "mySlides fade";
+
+  const numtxt = document.createElement("div");
+  numtxt.className = "numbertext";
+  numtxt.innerHTML = num + " / " + total;
+  imgslide.appendChild(numtxt);
+  const image = document.createElement("IMG");
+  image.setAttribute("src", src);
+  if (objpos !== undefined) {
+    image.style.objectPosition = objpos;
+  }
+  if (scale !== undefined) {
+    image.style.width  = scale;
+  }
+  imgslide.appendChild(image);
+  const txt = document.createElement("div");
+  txt.className = "captiontext";
+  txt.innerHTML = caption;
+  imgslide.appendChild(txt);
+
+  let slideshow = document.getElementById("slideshow");
+  slideshow.insertBefore(imgslide, slideshow.firstChild);
+}
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slides[slideIndex-1].style.display = "block";  
+
+  let dots = document.getElementsByClassName("dot");
+  if (dots.length > 0) {
+    console.log(dots);
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+    }
+    dots[slideIndex-1].className += " active";
+  }
+}
+
+function insertAfter(newNode, referenceNode) {
+    referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
+}
+
+function collapse(elem) {
+  elem.classList.toggle("active");
+  var content = elem.nextElementSibling;
+  if (content.style.display === "block") {
+    content.style.display = "none";
+  } else {
+    content.style.display = "block";
+  }
+}
+
+function removeAllChildNodes(parent) {
+  while (parent.firstChild) {
+      parent.removeChild(parent.firstChild);
+  }
+}
+
+function openNav(item) {
+  load(item);
+  slideIndex = 1;
+  showSlides(slideIndex);
+  document.getElementById("itemNav").style.width = "100%";
+}
+
+function closeNav() {
+  document.getElementById("itemNav").style.width = "0%";
+}
+
+</script>
+
+</body>
+</html> 
+
