@@ -2025,13 +2025,9 @@ function touchStart(event)
 
 function touchEnd(event)
 {
-  if (draggingSlide) {
-    draggingSlide.classList.remove('grabbing');
-  }
   cancelAnimationFrame(animationID);
 
   const movedBy = currentTranslate - prevTranslate;
-
   currentTranslate = 0;
   prevTranslate = currentTranslate;
   if (movedBy < -100) {
@@ -2039,7 +2035,9 @@ function touchEnd(event)
   } else if (movedBy > 100) {
     plusSlides(-1);
   }
-  if (draggingSlide) {
+
+  if (draggingSlide != null) {
+    draggingSlide.classList.remove('grabbing');
     setSliderPosition();
     draggingSlide = null;
   }
