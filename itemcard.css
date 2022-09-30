@@ -23,6 +23,10 @@ img {
   object-fit: cover;
 }
 
+.mySlides img {
+  height: 350px;
+}
+
 .itemdesc {
   padding: 5px;
   box-sizing: content-box;
